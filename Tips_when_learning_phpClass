@@ -1,0 +1,33 @@
+**心得体会
+--
+类的通性：
+
+继承，封装，多态
+
+php中的'魔术方法':
+
+1. __construct()  
+该方法常常用于初始化一个类，请看示例  
+```$xslt
+class Aclass{
+function __construct($mode=''){
+    echo $mode;
+    return strpad($mode, 10, '-');
+    //Meaningless string output
+    }
+    }
+```
+那么我们该如何获取其返回值呢?  
+```php
+$myclass = new Aclass('');
+//Invoke method 'construct'
+echo $myclass->__construct($mode='page');
+```
+还可见demo中的更多示例，适合于封装内部函数  
+而又重调用时
+2. __destruct()  
+用于销毁一个类时调用
+思考：如果一个destruct创建了一个新的实例，
+我们如何查看?
+
+(不定期更新)
